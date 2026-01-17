@@ -16,6 +16,7 @@ jobs:
         uses: actions/setup-node@v6.2.0
         with:
          node-version: 18.x
+         cache: 'npm'
            
       - name: Install dependency
         working-directory: ./frontend
@@ -31,8 +32,18 @@ jobs:
       #   run: |
       #     export NODE_OPTIONS=--openssl-legacy-provider
       #     npm run build
+      - name: Save in artifacts
+        uses: actions/upload-artifact@v6.0.0
+        with:
+            # Artifact name
+            name: next js build # optional, default is artifact
+            # A file, directory or wildcard pattern that describes what to upload
+            path: /out
+            # The desired behavior if no files are found using the provided path.
+  
 
       - name: Comformetion message
         run: echo "builedwas complted"
+        
         
       
