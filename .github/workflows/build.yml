@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the latestcode
+        uses: actions/checkout@v6.0.2
+        
+      - name: Node set Up
+        uses: actions/setup-node@v6.2.0
+        with:
+         node-version: 22.x
+           
+      - name: Install dependency
+        run: npm run install
+
+      - name: Make build
+        run: npm run build
+
+      - name: Comformetion message
+        run: echo "builedwas complted"
+        
+      
