@@ -1,0 +1,27 @@
+  name: build concurrency
+
+  on:
+    push:
+      branches: [main]
+
+  jobs:
+    Build:
+      runs-on: ubuntu-latest
+
+      concurrency:
+        group: deploy
+        cancel-in-progress: true
+
+      steps:
+        - name: Checkout Repositery
+          uses: actions/checkout@v6.0.2
+        - name: Install Dependancies
+          working-directory: ./frontend
+          run: npm install
+          
+        - name: make build next.js app
+          working-directory: ./frontend
+          run: npm npm run build
+
+        - name: Deploy 
+          run: echo "deploing based on thire party here...."
