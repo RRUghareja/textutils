@@ -1,0 +1,13 @@
+name: Cron
+
+on:
+  schedule:
+    -  cron: "0  0 *  *  *"
+
+jobs:
+  schedule-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Message to print
+        run: echo "scheduler is run"

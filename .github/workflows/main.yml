@@ -1,0 +1,13 @@
+  name: text-untils
+
+  on:
+    push: 
+      branches: [main]
+
+  jobs:
+    Build-and-deploy:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: gretings
+          run: echo "print hello"
