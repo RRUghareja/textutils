@@ -21,7 +21,7 @@
           
         - name: make build next.js app
           working-directory: ./frontend
-          run: npm npm run build
+          run: npm run build
 
         - name: Deploy 
           run: echo "deploing based on thire party here....mkmkmk"
