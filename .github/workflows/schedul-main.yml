@@ -10,4 +10,4 @@ jobs:
 
     steps:
       - name: Message to print
-        run: "scheduler is run"
+        run: echo "scheduler is run"
